@@ -1,92 +1,78 @@
-📋 LISTA COMPLETA DE COMANDOS
+# 📋 Lista Completa de Comandos do Bot Discord
 
-🎯 COMANDOS DE EVENTOS (Enquete)
-• Permissão necessária: Cargo "Puxadores"
+## 🎯 Comandos de Eventos (Enquete)
+**Permissão necessária:** Cargo "Puxadores"
 
-🔹 /criar_evento_boss
-  • Descrição: Criar uma nova enquete para eventos de boss
-  • Funcionalidade: Abre um modal para configurar evento com limite de jogadores por categoria (TANKER, HEALER, DPS, RESERVA)
-  • Como usar: Execute o comando e preencha o formulário com título, horário e limites de cada categoria
+| Comando              | Descrição                                      | Funcionalidade                                                                 | Como usar                                                                 |
+|----------------------|-----------------------------------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| `/criar_evento_boss` | Criar enquete para eventos de boss            | Modal com limite de jogadores por categoria (TANKER, HEALER, DPS, RESERVA)    | Execute o comando e preencha o formulário                                |
+| `/resultado_evento`  | Ver resultados dos últimos eventos            | Lista os 5 eventos mais recentes com participantes                            | Execute e selecione um evento para ver detalhes                          |
+| `/deletar_eventos`   | Deletar eventos salvos                        | Lista todos os eventos e permite deletar múltiplos                            | Execute, selecione os eventos e confirme                                 |
+| `/limpar_evento`     | Limpar enquetes da memória                    | Remove dados temporários de enquetes ativas                                   | Execute quando houver problemas com botões                               |
 
-🔹 /resultado_evento
-  • Descrição: Ver resultados dos últimos eventos criados
-  • Funcionalidade: Mostra os 5 eventos mais recentes com lista de participantes
-  • Como usar: Execute o comando e selecione um evento para ver detalhes completos
+---
 
-🔹 /deletar_eventos
-  • Descrição: Deletar eventos salvos do armazenamento
-  • Funcionalidade: Lista todos os eventos e permite deletar múltiplos por vez
-  • Como usar: Execute o comando, selecione os eventos para deletar e confirme
+## 🔧 Comandos de Gerenciamento (Cargos)
+**Permissão necessária:** "Gerenciar Cargos"
 
-🔹 /limpar_evento
-  • Descrição: Limpar enquetes da memória
-  • Funcionalidade: Remove dados temporários de enquetes ativas
-  • Como usar: Execute quando houver problemas com botões de enquetes
+| Comando                    | Descrição                                 | Funcionalidade                                              | Como usar                                                        |
+|----------------------------|-------------------------------------------|--------------------------------------------------------------|------------------------------------------------------------------|
+| `/gerenciar_cargos [cargo]` | Gerenciar cargos em múltiplos membros     | Interface para adição/remoção em massa                      | Execute com ou sem o parâmetro para escolher o cargo             |
 
-🔧 COMANDOS DE GERENCIAMENTO (Cargos)
-• Permissão necessária: Permissão "Gerenciar Cargos"
+---
 
-🔹 /gerenciar_cargos [cargo]
-  • Descrição: Adicionar ou remover cargos de múltiplos membros
-  • Parâmetro opcional: cargo - Cargo específico para gerenciar
-  • Funcionalidade: Interface completa para gerenciamento em massa de cargos
-  • Como usar: Execute sem parâmetro para escolher cargo, ou com cargo específico
+## 🔐 Comandos de Verificação (Novos Membros)
+**Permissão necessária:** Administrador
 
-🔐 COMANDOS DE VERIFICAÇÃO (Novos Membros)
-• Permissão necessária: Administrador
+| Comando                          | Descrição                                 | Funcionalidade                                                             | Como usar                                                        |
+|----------------------------------|-------------------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------------|
+| `/criar_painel_verificacao`     | Criar painel de verificação               | Sistema com nickname e vocação                                             | Execute no canal desejado ou informe um canal                    |
+| `/verificar_cargos`             | Verificar existência dos cargos           | Checa se Convidado, EK, MS, RP, ED, MK estão configurados                 | Execute para diagnóstico                                         |
+| `/resultado_verificacao`        | Ver lista de membros verificados          | Mostra estatísticas e histórico                                            | Execute para ver o relatório completo                            |
 
-🔹 /criar_painel_verificacao [canal]
-  • Descrição: Criar painel de verificação para novos membros
-  • Parâmetro opcional: canal - Canal onde criar o painel
-  • Funcionalidade: Cria sistema interativo de verificação com nickname e vocação
-  • Como usar: Execute no canal desejado ou especifique um canal
+---
 
-🔹 /verificar_cargos
-  • Descrição: Verificar se todos os cargos necessários existem
-  • Funcionalidade: Verifica existência dos cargos: Convidado, EK, MS, RP, ED, MK
-  • Como usar: Execute para diagnóstico do sistema de verificação
+## ⚙️ Comandos Administrativos
+**Permissão necessária:** Administrador
 
-🔹 /resultado_verificacao
-  • Descrição: Ver lista completa de novos membros verificados
-  • Funcionalidade: Mostra estatísticas e histórico de verificações
-  • Como usar: Execute para ver relatório completo de verificações
+| Comando           | Descrição                              | Funcionalidade                                      | Como usar                                               |
+|-------------------|------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
+| `/sync_comandos`  | Sincronizar comandos slash              | Atualiza comandos quando não aparecem ou falham     | Execute quando comandos não estiverem funcionando       |
 
-⚙️ COMANDOS ADMINISTRATIVOS
-• Permissão necessária: Administrador
+---
 
-🔹 /sync_comandos
-  • Descrição: Forçar sincronização dos comandos slash
-  • Funcionalidade: Atualiza comandos no Discord quando há problemas
-  • Como usar: Execute quando comandos não aparecem ou não funcionam
+## 🎮 Sistemas Interativos
 
-🎮 SISTEMAS INTERATIVOS
+### Sistema de Eventos
+- Enquetes com botões interativos
+- Categorias: 🛡️ TANKER, 🚑 HEALER, ⚔️ DPS, 🔄 RESERVA
+- Limite configurável por categoria
+- Lista automática de participantes
+- Salvamento persistente em JSON
 
-🔸 Sistema de Eventos
-  • Criação de enquetes com botões interativos
-  • Categorias: TANKER (🛡️), HEALER (🚑), DPS (⚔️), RESERVA (🔄)
-  • Limite configurável por categoria
-  • Lista automática de participantes
-  • Salvamento persistente em JSON
+### Sistema de Verificação
+- Painel persistente para novos membros
+- Processo em 3 etapas:
+  1. Definir nickname
+  2. Receber cargo "Convidado"
+  3. Escolher vocação (EK, MS, RP, ED, MK)
 
-🔸 Sistema de Verificação
-  • Painel persistente para novos membros
-  • Processo em 3 etapas:
-    ◦ Definir nickname do servidor
-    ◦ Receber cargo "Convidado" automaticamente
-    ◦ Escolher vocação obrigatória (EK, MS, RP, ED, MK)
+### Sistema de Gerenciamento de Cargos
+- Dropdowns para múltipla seleção
+- Visualização de membros com/sem cargo
+- Ações em massa com confirmação
 
-🔸 Sistema de Gerenciamento de Cargos
-  • Interface com dropdowns para seleção múltipla
-  • Visualização de membros com/sem cargo
-  • Seleção em massa (todos/nenhum)
-  • Confirmação antes de aplicar mudanças
+---
 
-📊 RECURSOS ESPECIAIS
-• Logging completo: Todas as ações são registradas com horário de Brasília
-• Armazenamento persistente: Dados salvos em JSON para eventos e verificações
-• Interface responsiva: Botões e dropdowns com feedback visual
-• Verificação de permissões: Controle de acesso por cargo/permissão
-• Views persistentes: Painéis que funcionam mesmo após restart do bot
-• Relatórios detalhados: Estatísticas e históricos completos
+## 📊 Recursos Especiais
 
-ℹ️ Todos os comandos usam slash commands ( / ) e têm verificação de permissões apropriadas para cada função.
+- Logging com horário de Brasília  
+- Armazenamento persistente em JSON  
+- Interface responsiva com feedback visual  
+- Verificação de permissões por cargo  
+- Views que funcionam após restart do bot  
+- Relatórios completos e detalhados  
+
+---
+
+> Todos os comandos usam **slash commands** ( `/` ) e têm verificação de permissões apropriadas.
